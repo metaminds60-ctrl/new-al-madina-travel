@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { 
   FaPlane, 
   FaPhone, 
@@ -12,6 +13,9 @@ import {
   FaWhatsapp,
   FaClock
 } from 'react-icons/fa'
+
+import footerLogo from "../../assets/footer-logo.png";
+ // ✅ Make sure image path is correct
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -55,49 +59,73 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gray-900 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <motion.footer 
+      className="bg-gray-900 border-t border-gray-800 relative overflow-hidden"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+    >
+      {/* Noor Glow Effect */}
+      <div className="absolute inset-0 bg-gradient-to-t from-yellow-900/5 to-transparent blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center space-x-2 mb-4 group">
-              <div className="bg-yellow-500 p-2 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                <FaPlane className="text-gray-900 text-xl" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white group-hover:text-yellow-500 transition-colors duration-300">
+            <Link to="/" className="flex items-center space-x-3 mb-4 group">
+              <motion.img 
+                src={footerLogo} 
+                alt="Footer Logo"
+                className="w-12 h-12 object-contain rounded-lg shadow-md 
+                           transition-all duration-500 group-hover:scale-110 
+                           group-hover:shadow-[0_0_25px_#FFD700]"
+                whileHover={{ scale: 1.15, rotate: 2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              />
+              <motion.div 
+                className="flex flex-col"
+                whileHover={{ x: 2 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h3 className="text-xl font-bold text-white 
+                               group-hover:text-yellow-400 
+                               transition-all duration-300 drop-shadow-[0_0_5px_#FFD700]">
                   New Al Madina Travel
                 </h3>
                 <p className="text-sm text-yellow-500">Premium Travel Experiences</p>
-              </div>
+              </motion.div>
             </Link>
+
             <p className="text-gray-400 mb-4 leading-relaxed">
               Providing premium travel experiences across Saudi Arabia, UAE, Qatar, Bahrain, 
               Malaysia, Thailand, Azerbaijan & the UK since 2008.
             </p>
+
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <a
+                <motion.a
                   key={index}
                   href={social.url}
                   className={`text-gray-400 ${social.color} transition-all duration-300 transform hover:scale-110`}
                   aria-label={`Follow us on ${social.name}`}
+                  whileHover={{ scale: 1.2 }}
                 >
-                  <social.icon className="text-xl" />
-                </a>
+                  <social.icon className="text-xl drop-shadow-[0_0_5px_#FFD700]" />
+                </motion.a>
               ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-white mb-4 transition-all duration-300 hover:text-yellow-400 hover:drop-shadow-[0_0_10px_#FFD700]">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-yellow-500 transition-all duration-300 transform hover:translate-x-1 inline-block"
+                    className="text-gray-400 hover:text-yellow-400 transition-all duration-300 transform hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </Link>
@@ -108,11 +136,11 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Our Services</h4>
+            <h4 className="text-lg font-semibold text-white mb-4 transition-all duration-300 hover:text-yellow-400 hover:drop-shadow-[0_0_10px_#FFD700]">Our Services</h4>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-gray-400 hover:text-yellow-500 transition-colors duration-300 cursor-pointer">
+                  <span className="text-gray-400 hover:text-yellow-400 transition-colors duration-300 cursor-pointer">
                     {service}
                   </span>
                 </li>
@@ -122,7 +150,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Contact Info</h4>
+            <h4 className="text-lg font-semibold text-white mb-4 transition-all duration-300 hover:text-yellow-400 hover:drop-shadow-[0_0_10px_#FFD700]">Contact Info</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3 group">
                 <FaMapMarkerAlt className="text-yellow-500 group-hover:scale-110 transition-transform duration-300" />
@@ -150,11 +178,11 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Countries We Serve */}
+            {/* Countries */}
             <div className="mt-6">
               <h5 className="text-md font-semibold text-yellow-500 mb-2">Countries We Serve</h5>
               <div className="flex flex-wrap gap-2">
-                {countries.map((country, index) => (
+                {countries.map((country) => (
                   <span
                     key={country}
                     className="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs border border-gray-700"
@@ -167,49 +195,25 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Trust Badges */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span>SSL Secure</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span>24/7 Support</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                <span>Verified Agency</span>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-4 text-yellow-500">
-              <span className="text-sm">Certified Travel Agency</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
+        {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
             © {currentYear} New Al Madina Travel. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-yellow-500 text-sm transition-colors duration-300">
+            <a href="#" className="text-gray-400 hover:text-yellow-400 text-sm transition-colors duration-300">
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-yellow-500 text-sm transition-colors duration-300">
+            <a href="#" className="text-gray-400 hover:text-yellow-400 text-sm transition-colors duration-300">
               Terms of Service
             </a>
-            <a href="#" className="text-gray-400 hover:text-yellow-500 text-sm transition-colors duration-300">
+            <a href="#" className="text-gray-400 hover:text-yellow-400 text-sm transition-colors duration-300">
               Cookie Policy
             </a>
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
 

@@ -5,7 +5,7 @@ import { FaArrowRight, FaPlaneDeparture } from 'react-icons/fa'
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 md:pt-32">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -28,7 +28,7 @@ const Hero = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="inline-flex items-center space-x-2 bg-primary-gold/20 backdrop-blur-sm border border-primary-gold/30 rounded-full px-6 py-3 mb-8"
+            className="inline-flex items-center space-x-2 bg-primary-gold/20 backdrop-blur-sm border border-primary-gold/30 rounded-full px-6 py-3 mb-8 shadow-[0_0_20px_rgba(212,175,55,0.3)]"
           >
             <FaPlaneDeparture className="text-primary-gold" />
             <span className="text-primary-gold font-semibold">
@@ -40,7 +40,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-[0_0_25px_rgba(212,175,55,0.4)]"
           >
             Explore the World with{' '}
             <span className="text-primary-gold">New Al Madina Travel</span>
