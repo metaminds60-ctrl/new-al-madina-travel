@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer'
 import WhatsAppButton from './components/ui/WhatsAppButton'
 import Home from './pages/Home'
 import About from './pages/About'
+import UmrahPackages from "./pages/UmrahPackages";
 import Services from './pages/Services'
 import Flights from './pages/Flights'
 import Contact from './pages/Contact'
@@ -18,9 +19,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/umrah-packages" element={<UmrahPackages />} />
             <Route path="/services" element={<Services />} />
             <Route path="/flights" element={<Flights />} />
             <Route path="/contact" element={<Contact />} />
+            
           </Routes>
         </main>
         <Footer />

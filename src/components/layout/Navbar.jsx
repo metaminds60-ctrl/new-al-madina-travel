@@ -17,11 +17,13 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // 🔹 Added "Umrah Packages" page
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Flights', path: '/flights' },
+    { name: 'Umrah Packages', path: '/umrah-packages' },
     { name: 'Contact', path: '/contact' },
   ]
 
@@ -41,7 +43,7 @@ const Navbar = () => {
               <FaPlane className="text-gray-900 text-xl" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-white">New Al Madina Travel</h1>
+              <h1 className="text-xl font-bold text-white">New Al Madina Travels</h1>
               <p className="text-xs text-yellow-500">Premium Travel Experiences</p>
             </div>
           </Link>
@@ -59,30 +61,22 @@ const Navbar = () => {
                     className="ml-4 relative"
                   >
                     <Link
-  to="/contact"
-  className="group relative bg-gradient-to-r from-yellow-500 to-yellow-400 text-gray-900 px-4 py-2 rounded-md font-semibold text-sm transition-all duration-500 hover:from-yellow-400 hover:to-yellow-500 hover:shadow-xl hover:shadow-yellow-500/40 flex items-center space-x-1.5 overflow-hidden border border-yellow-300"
->
-  {/* Animated shine effect */}
-  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-  
-  {/* Inner glow */}
-  <div className="absolute inset-0 rounded-md bg-yellow-500/20 transform scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-  
-  {/* Content */}
-  <span className="relative z-10 flex items-center space-x-1.5">
-    <motion.div
-      animate={{ rotate: [0, 10, 0] }}
-      transition={{ duration: 2, repeat: Infinity }}
-    >
-      <FaPhone className="text-xs" />
-    </motion.div>
-    <span className="font-bold text-sm">Contact Us</span>
-  </span>
-  
-  {/* Outer glow on hover */}
-  <div className="absolute -inset-1 bg-yellow-500/20 rounded-md blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-</Link>
-
+                      to="/contact"
+                      className="group relative bg-gradient-to-r from-yellow-500 to-yellow-400 text-gray-900 px-4 py-2 rounded-md font-semibold text-sm transition-all duration-500 hover:from-yellow-400 hover:to-yellow-500 hover:shadow-xl hover:shadow-yellow-500/40 flex items-center space-x-1.5 overflow-hidden border border-yellow-300"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      <div className="absolute inset-0 rounded-md bg-yellow-500/20 transform scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                      <span className="relative z-10 flex items-center space-x-1.5">
+                        <motion.div
+                          animate={{ rotate: [0, 10, 0] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        >
+                          <FaPhone className="text-xs" />
+                        </motion.div>
+                        <span className="font-bold text-sm">Contact Us</span>
+                      </span>
+                      <div className="absolute -inset-1 bg-yellow-500/20 rounded-md blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                    </Link>
                   </motion.div>
                 )
               }
@@ -93,7 +87,9 @@ const Navbar = () => {
                   key={item.name}
                   to={item.path}
                   className={`relative font-medium transition-all duration-300 ${
-                    location.pathname === item.path ? 'text-yellow-500' : 'text-white hover:text-[#d4af37]'
+                    location.pathname === item.path
+                      ? 'text-yellow-500'
+                      : 'text-white hover:text-[#d4af37]'
                   }`}
                 >
                   {item.name}
@@ -128,7 +124,6 @@ const Navbar = () => {
             className="md:hidden mt-4 bg-gray-800/90 backdrop-blur-md rounded-lg p-4"
           >
             {navItems.map((item) => {
-              // Prominent Contact in mobile menu too
               if (item.name === 'Contact') {
                 return (
                   <Link
