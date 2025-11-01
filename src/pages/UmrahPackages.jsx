@@ -3,6 +3,9 @@ import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { FaPlaneDeparture, FaHotel, FaBusAlt, FaRegHandshake } from "react-icons/fa";
 
+// 👇 Image public folder me hai, so import ki zarurat nahi — direct path use hoga
+// import saudiLogo from "../assets/saudi-airlines-logo.png"; ❌ (Not needed)
+
 const UmrahPackages = () => {
   // Offer Popup State
   const [showOffer, setShowOffer] = useState(true);
@@ -17,7 +20,7 @@ const UmrahPackages = () => {
     {
       id: 1,
       makkahHotel: "THARAWAT MISFILLA OR SIMILAR (Shuttle Service)",
-      madinahHotel: "KINAN MADINA OR SIMILAR (Shuttle Service)",
+      madinahHotel: "KINAN MADINA OR SIMILAR (900 Meter)",
       nights: "12 Nights Makkah + 8 Nights Madinah",
       flights: ["SV 723 00-ABC 10:40 - 14:55", "SV 726 00-ABC 17:40 - 00:20"],
       prices: {
@@ -69,7 +72,9 @@ const UmrahPackages = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-primary-dark text-white py-16">
+    <div className="bg-gradient-to-br from-gray-900 to-primary-dark text-white pt-32 pb-16">
+      {/* ↑ Added top padding (pt-32) between header and content */}
+
       <Helmet>
         <title>Umrah Packages | New Al Madina Travel</title>
         <meta
@@ -97,10 +102,35 @@ const UmrahPackages = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-4">
+        {/* Advance Booking Button */}
+        <div className="mb-3">
+          <button className="bg-primary-gold/20 border border-primary-gold text-primary-gold px-6 py-2 rounded-full font-semibold hover:bg-primary-gold hover:text-black hover:shadow-[0_0_20px_#ffd700] transition-all duration-300">
+            ✨ Advance Booking
+          </button>
+        </div>
+
+        {/* Main Heading */}
+        <h2 className="text-3xl font-bold text-white mb-2">
           21 DAYS UMRAH PACKAGES
-        </h1>
-        <p className="text-gray-300 text-lg">
+        </h2>
+        <p className="text-gray-300 text-sm md:text-base mb-4">
+          <span className="font-semibold text-primary-gold">Last Booking Date:</span> 09 Dec 2025 <br />
+          <span className="font-semibold text-primary-gold">Travelling Dates:</span> 15 Dec 2025 – 15 Feb 2026
+        </p>
+
+        {/* Airline Logo */}
+        <div className="flex flex-col items-center justify-center mt-4">
+          <img
+            src="/images/umrahpackages/saudi-airlines-logo.png"
+            alt="Saudi Airlines Logo"
+            className="w-28 h-auto object-contain hover:drop-shadow-[0_0_10px_#ffd700] transition-all duration-300"
+          />
+          <p className="text-primary-gold mt-2 font-semibold">
+            Official Airline: Saudi Airlines
+          </p>
+        </div>
+
+        <p className="text-gray-300 text-lg mt-4">
           Traveling From Lahore – Choose the perfect package for your blessed journey
         </p>
       </motion.div>
