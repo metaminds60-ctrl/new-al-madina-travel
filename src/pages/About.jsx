@@ -127,13 +127,13 @@ const About = () => {
       rating: 5
     },
     {
-      name: 'Emily Chen',
+      name: 'Fatima Hassan',
       position: 'Business Owner',
       text: 'Outstanding visa processing service for our company trips to Malaysia. Fast, reliable, and very professional.',
       rating: 5
     },
     {
-      name: 'Robert Johnson',
+      name: 'Saad Ibrahim',
       position: 'University Professor',
       text: 'The student visa process for my daughter was handled perfectly. Their expertise made everything smooth and stress-free.',
       rating: 5

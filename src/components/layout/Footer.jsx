@@ -91,7 +91,7 @@ const Footer = () => {
                 <h3 className="text-xl font-bold text-white 
                                group-hover:text-yellow-400 
                                transition-all duration-300 drop-shadow-[0_0_5px_#FFD700]">
-                  New Al Madina Travel
+                  New Al Madina Travels
                 </h3>
                 <p className="text-sm text-yellow-500">Premium Travel Experiences</p>
               </motion.div>
