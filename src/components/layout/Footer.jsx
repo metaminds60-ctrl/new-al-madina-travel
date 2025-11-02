@@ -47,6 +47,7 @@ const Footer = () => {
     'Azerbaijan',
     'Malaysia',
     'Thailand',
+    'Japan',
     'United Kingdom'
   ]
 
@@ -99,7 +100,7 @@ const Footer = () => {
 
             <p className="text-gray-400 mb-4 leading-relaxed">
               Providing premium travel experiences across Saudi Arabia, UAE, Qatar, Bahrain, 
-              Malaysia, Thailand, Azerbaijan & the UK since 2008.
+              Malaysia, Thailand, Japan, Azerbaijan & the UK since 2008.
             </p>
 
             <div className="flex space-x-4">

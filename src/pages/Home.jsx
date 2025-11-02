@@ -172,7 +172,7 @@ const Home = () => {
             className="text-xl md:text-2xl lg:text-3xl text-gray-200 mb-8 leading-relaxed max-w-4xl mx-auto"
           >
             Your trusted partner for <span className="text-yellow-500">premium travel experiences</span> across 
-            Saudi Arabia, UAE, Qatar, Bahrain, Malaysia, Thailand, Azerbaijan & the UK.
+            Saudi Arabia, UAE, Qatar, Bahrain, Malaysia, Thailand, Japan, Azerbaijan & the UK.
           </motion.p>
 
           <motion.div
@@ -314,7 +314,7 @@ const Home = () => {
               to="/services"
               className="inline-flex items-center space-x-2 border-2 border-yellow-500 text-yellow-500 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-500 hover:text-gray-900 transition-all duration-300"
             >
-              <span>View All 8 Countries</span>
+              <span>View All 10 Countries</span>
               <FaGlobe />
             </Link>
           </motion.div>

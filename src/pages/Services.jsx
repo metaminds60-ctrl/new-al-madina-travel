@@ -17,7 +17,7 @@ import {
 } from 'react-icons/fa'
 
 const Services = () => {
-  // All 8 Countries with Detailed Services
+  // All 9 Countries with Detailed Services (Japan added)
   const countries = [
     {
       id: 'saudi-arabia',
@@ -314,6 +314,48 @@ const Services = () => {
       ]
     },
     {
+      id: 'japan',
+      name: 'Japan',
+      flag: '🇯🇵',
+      description: 'Experience the perfect blend of ancient traditions and cutting-edge technology in the Land of the Rising Sun.',
+      image: '/images/countries/japan-cover.jpg',
+      popularFor: ['Work Permits', 'Cultural Tours', 'Technology'],
+      services: [
+        {
+          icon: FaUserTie,
+          name: 'Work Permit',
+          description: 'Professional work visa and employment support',
+          features: ['Job Placement', 'Document Processing', 'Company Sponsorship', 'Residency Support'],
+          duration: '4-8 weeks',
+          price: 'Starting from $400'
+        },
+        {
+          icon: FaPlane,
+          name: 'Tourist Visa',
+          description: 'Explore Tokyo, Kyoto, Osaka and more',
+          features: ['Single/Multiple Entry', 'Itinerary Planning', 'JR Pass Assistance', 'Cultural Experiences'],
+          duration: '5-7 days',
+          price: 'Starting from $120'
+        },
+        {
+          icon: FaGraduationCap,
+          name: 'Student Visa',
+          description: 'Study in Japanese universities and language schools',
+          features: ['University Admission', 'Language School', 'Accommodation', 'Cultural Integration'],
+          duration: '3-6 weeks',
+          price: 'Starting from $350'
+        },
+        {
+          icon: FaHotel,
+          name: 'Accommodation',
+          description: 'Traditional ryokans and modern hotels',
+          features: ['Tokyo Hotels', 'Kyoto Ryokans', 'Osaka Apartments', 'Onsen Resorts'],
+          duration: 'Instant',
+          price: 'Various Options'
+        }
+      ]
+    },
+    {
       id: 'uk',
       name: 'United Kingdom',
       flag: '🇬🇧',
@@ -409,6 +451,30 @@ const Services = () => {
     }
   ]
 
+  // Container variants for staggered animations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  // Item variants for staggered animations
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  }
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -420,6 +486,7 @@ const Services = () => {
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white"
           >
             Our <span className="text-yellow-500">Services</span>
@@ -427,16 +494,16 @@ const Services = () => {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
           >
-            Comprehensive travel and visa services across 8 countries. From spiritual journeys to business trips and luxury vacations, we handle every detail with precision and care.
+            Comprehensive travel and visa services across 9 countries. From spiritual journeys to business trips and luxury vacations, we handle every detail with precision and care.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Link 
@@ -475,16 +542,26 @@ const Services = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
             {generalServices.map((service, index) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-                className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/5 group"
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.05,
+                  rotateY: 5,
+                  transition: { duration: 0.3 }
+                }}
+                className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/5 group backdrop-blur-sm"
+                style={{
+                  transformStyle: 'preserve-3d'
+                }}
               >
                 <div className="mb-4">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-500/20 rounded-2xl group-hover:bg-yellow-500/30 transition-colors duration-300">
@@ -509,7 +586,7 @@ const Services = () => {
                 </ul>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -531,15 +608,19 @@ const Services = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
             {whyChooseUs.map((item, index) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center group"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                className="text-center group backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-yellow-500/30 transition-all duration-300"
               >
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-yellow-500/20 rounded-2xl mb-6 group-hover:bg-yellow-500/30 transition-colors duration-300">
                   <item.icon className="text-3xl text-yellow-500" />
@@ -552,7 +633,7 @@ const Services = () => {
                 </p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -574,34 +655,51 @@ const Services = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-20">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-20"
+          >
             {countries.map((country, countryIndex) => (
               <motion.div
                 key={country.id}
+                variants={itemVariants}
                 id={country.id}
-                initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: countryIndex * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-800/30 backdrop-blur-sm rounded-3xl overflow-hidden border border-gray-700 hover:border-yellow-500/30 transition-all duration-500"
+                className="bg-gray-800/30 backdrop-blur-sm rounded-3xl overflow-hidden border border-gray-700 hover:border-yellow-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/10"
+                style={{
+                  transformStyle: 'preserve-3d'
+                }}
               >
-                {/* Country Header */}
-                <div className="relative h-80 overflow-hidden">
-                  <img
+                {/* Country Header - FIXED FOR MOBILE */}
+                <div className="relative h-64 sm:h-80 overflow-hidden">
+                  <motion.img
                     src={country.image}
                     alt={country.name}
                     className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.5 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
-                  <div className="absolute bottom-8 left-8">
-                    <div className="flex items-center space-x-4">
-                      <span className="text-5xl">{country.flag}</span>
-                      <div>
-                        <h3 className="text-4xl font-bold text-white">{country.name}</h3>
-                        <p className="text-gray-200 mt-2 text-lg max-w-2xl">{country.description}</p>
+                  <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-auto">
+                    <div className="flex items-start space-x-3 sm:space-x-4">
+                      <span className="text-4xl sm:text-5xl flex-shrink-0">{country.flag}</span>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-2xl sm:text-4xl font-bold text-white leading-tight break-words">
+                          {country.name}
+                        </h3>
+                        <p className="text-gray-200 mt-2 text-sm sm:text-lg leading-relaxed line-clamp-2 sm:line-clamp-none">
+                          {country.description}
+                        </p>
                         <div className="flex flex-wrap gap-2 mt-3">
                           {country.popularFor.map((item, idx) => (
-                            <span key={idx} className="bg-yellow-500/20 text-yellow-500 px-3 py-1 rounded-full text-sm border border-yellow-500/30">
+                            <span 
+                              key={idx} 
+                              className="bg-yellow-500/20 text-yellow-500 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-yellow-500/30 whitespace-nowrap"
+                            >
                               {item}
                             </span>
                           ))}
@@ -612,53 +710,64 @@ const Services = () => {
                 </div>
 
                 {/* Services Grid */}
-                <div className="p-8">
-                  <div className="grid md:grid-cols-2 gap-8">
+                <div className="p-4 sm:p-8">
+                  <motion.div
+                    variants={containerVariants}
+                    className="grid md:grid-cols-2 gap-4 sm:gap-8"
+                  >
                     {country.services.map((service, serviceIndex) => (
                       <motion.div
                         key={service.name}
+                        variants={itemVariants}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: serviceIndex * 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-gray-700/30 rounded-2xl p-6 border border-gray-600 hover:border-yellow-500/50 transition-all duration-300 group"
+                        whileHover={{ 
+                          scale: 1.02,
+                          rotateY: 5,
+                          transition: { duration: 0.3 }
+                        }}
+                        className="bg-gray-700/30 rounded-2xl p-4 sm:p-6 border border-gray-600 hover:border-yellow-500/50 transition-all duration-300 group backdrop-blur-sm"
+                        style={{
+                          transformStyle: 'preserve-3d'
+                        }}
                       >
-                        <div className="flex items-start space-x-4">
+                        <div className="flex items-start space-x-3 sm:space-x-4">
                           <div className="flex-shrink-0">
-                            <div className="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center group-hover:bg-yellow-500/30 transition-colors duration-300">
-                              <service.icon className="text-xl text-yellow-500" />
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center group-hover:bg-yellow-500/30 transition-colors duration-300">
+                              <service.icon className="text-lg sm:text-xl text-yellow-500" />
                             </div>
                           </div>
-                          <div className="flex-1">
-                            <h4 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-500 transition-colors duration-300">
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-yellow-500 transition-colors duration-300 break-words">
                               {service.name}
                             </h4>
-                            <p className="text-gray-300 mb-3">
+                            <p className="text-gray-300 mb-3 text-sm sm:text-base leading-relaxed">
                               {service.description}
                             </p>
                             
-                            <div className="space-y-2 mb-4">
+                            <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
                               {service.features.map((feature, idx) => (
-                                <div key={idx} className="flex items-center space-x-2 text-sm text-gray-400">
-                                  <FaCheck className="text-green-500 text-xs" />
-                                  <span>{feature}</span>
+                                <div key={idx} className="flex items-center space-x-2 text-xs sm:text-sm text-gray-400">
+                                  <FaCheck className="text-green-500 text-xs flex-shrink-0" />
+                                  <span className="break-words">{feature}</span>
                                 </div>
                               ))}
                             </div>
 
-                            <div className="flex items-center justify-between text-sm">
-                              <span className="text-yellow-500 font-semibold">{service.duration}</span>
-                              <span className="text-gray-300">{service.price}</span>
+                            <div className="flex items-center justify-between text-xs sm:text-sm">
+                              <span className="text-yellow-500 font-semibold whitespace-nowrap">{service.duration}</span>
+                              <span className="text-gray-300 text-right break-words ml-2">{service.price}</span>
                             </div>
                           </div>
                         </div>
                       </motion.div>
                     ))}
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
