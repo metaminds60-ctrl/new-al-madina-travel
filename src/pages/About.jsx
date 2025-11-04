@@ -123,7 +123,7 @@ const About = () => {
     {
       name: 'Dr. Ali Rahman',
       position: 'Medical Professional',
-      text: 'New Al Madina Travel made my family\'s Hajj journey seamless. Their attention to detail and professional service was exceptional.',
+      text: 'New Al Madina Travels made my family\'s Hajj journey seamless. Their attention to detail and professional service was exceptional.',
       rating: 5
     },
     {
@@ -153,7 +153,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white"
           >
-            About <span className="text-yellow-500">New Al Madina Travel</span>
+            About <span className="text-yellow-500">New Al Madina Travels</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -183,7 +183,7 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
                 <p>
-                  Founded in 2008, New Al Madina Travel began as a small travel agency with a big vision: 
+                  Founded in 2008, New Al Madina Travels began as a small travel agency with a big vision: 
                   to make international travel accessible and enjoyable for everyone. What started as a 
                   humble office in the heart of the city has now grown into a trusted name in travel 
                   services across 8 countries.
