@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaSearch, FaPlane, FaCalendarAlt, FaUser, FaHeadset, FaStar, FaCheck } from 'react-icons/fa'
+import { FaSearch, FaPlane, FaHeadset, FaStar, FaCheck } from 'react-icons/fa'
+import FlightInquiryForm from '../components/FlightInquiryForm'
 
 const Flights = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +13,6 @@ const Flights = () => {
     tripType: 'one-way'
   })
 
-  // CORRECTED: Using only valid icons
   const features = [
     {
       icon: FaPlane,
@@ -68,189 +68,43 @@ const Flights = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-900 to-blue-900">
-        <div className="max-w-6xl mx-auto text-center px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold mb-6 text-white"
-          >
-            Book <span className="text-yellow-500">Flights</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
-          >
-            Find the best flight deals to 1000+ destinations worldwide. Compare prices, choose your preferred airline, and book with confidence.
-          </motion.p>
-        </div>
-      </section>
+            {/* Hero Section */}
+<section
+  className="relative py-20"
+  style={{
+    backgroundImage:
+      "linear-gradient(to bottom, rgba(3,7,18,0.90), rgba(15,23,42,0.95)), url('/images/flight/flights-hero-bg.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  <div className="max-w-6xl mx-auto text-center px-4">
+    <motion.h1
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="text-5xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-[0_6px_16px_rgba(0,0,0,0.65)]"
+    >
+      Book <span className="text-yellow-500">Cheap Flights</span>
+    </motion.h1>
+    <motion.p
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+      className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto"
+    >
+      Compare routes, share your travel plan and let our team find the{" "}
+      <span className="font-semibold text-yellow-300">
+        lowest manual fares
+      </span>{" "}
+      for any destination worldwide.
+    </motion.p>
+  </div>
+</section>
+  
 
-      {/* Flight Search Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 shadow-2xl"
-          >
-            <h2 className="text-3xl font-bold text-center mb-8 text-white">
-              Search <span className="text-yellow-500">Flights</span>
-            </h2>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Trip Type */}
-              <div className="flex gap-4 justify-center">
-                {['one-way', 'round-trip'].map((type) => (
-                  <label key={type} className="flex items-center space-x-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      name="tripType"
-                      value={type}
-                      checked={formData.tripType === type}
-                      onChange={handleChange}
-                      className="hidden"
-                    />
-                    <div className={`px-6 py-3 rounded-lg border-2 transition-all duration-300 ${
-                      formData.tripType === type
-                        ? 'border-yellow-500 bg-yellow-500/20 text-yellow-500'
-                        : 'border-gray-600 text-gray-400 hover:border-gray-500'
-                    }`}>
-                      {type === 'one-way' ? 'One Way' : 'Round Trip'}
-                    </div>
-                  </label>
-                ))}
-              </div>
-
-              {/* From & To */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="relative">
-                  <label className="block text-sm font-semibold text-gray-300 mb-3">
-                    From
-                  </label>
-                  <div className="relative">
-                    <FaPlane className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                    <select
-                      name="from"
-                      value={formData.from}
-                      onChange={handleChange}
-                      required
-                      className="w-full pl-12 pr-4 py-4 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300 appearance-none"
-                    >
-                      <option value="">Select departure city</option>
-                      <option value="Riyadh (RUH)">Riyadh (RUH)</option>
-                      <option value="Jeddah (JED)">Jeddah (JED)</option>
-                      <option value="Dubai (DXB)">Dubai (DXB)</option>
-                      <option value="Abu Dhabi (AUH)">Abu Dhabi (AUH)</option>
-                      <option value="Doha (DOH)">Doha (DOH)</option>
-                      <option value="Manama (BAH)">Manama (BAH)</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <label className="block text-sm font-semibold text-gray-300 mb-3">
-                    To
-                  </label>
-                  <div className="relative">
-                    <FaPlane className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 rotate-90" />
-                    <select
-                      name="to"
-                      value={formData.to}
-                      onChange={handleChange}
-                      required
-                      className="w-full pl-12 pr-4 py-4 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300 appearance-none"
-                    >
-                      <option value="">Select destination city</option>
-                      <option value="Riyadh (RUH)">Riyadh (RUH)</option>
-                      <option value="Jeddah (JED)">Jeddah (JED)</option>
-                      <option value="Dubai (DXB)">Dubai (DXB)</option>
-                      <option value="Abu Dhabi (AUH)">Abu Dhabi (AUH)</option>
-                      <option value="Doha (DOH)">Doha (DOH)</option>
-                      <option value="Manama (BAH)">Manama (BAH)</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              {/* Dates */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="relative">
-                  <label className="block text-sm font-semibold text-gray-300 mb-3">
-                    Departure Date
-                  </label>
-                  <div className="relative">
-                    <FaCalendarAlt className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                    <input
-                      type="date"
-                      name="departure"
-                      value={formData.departure}
-                      onChange={handleChange}
-                      required
-                      className="w-full pl-12 pr-4 py-4 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300"
-                    />
-                  </div>
-                </div>
-
-                {formData.tripType === 'round-trip' && (
-                  <div className="relative">
-                    <label className="block text-sm font-semibold text-gray-300 mb-3">
-                      Return Date
-                    </label>
-                    <div className="relative">
-                      <FaCalendarAlt className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                      <input
-                        type="date"
-                        name="return"
-                        value={formData.return}
-                        onChange={handleChange}
-                        required
-                        className="w-full pl-12 pr-4 py-4 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300"
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Passengers */}
-              <div className="relative">
-                <label className="block text-sm font-semibold text-gray-300 mb-3">
-                  Passengers
-                </label>
-                <div className="relative">
-                  <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                  <select
-                    name="passengers"
-                    value={formData.passengers}
-                    onChange={handleChange}
-                    className="w-full pl-12 pr-4 py-4 bg-gray-700 border border-gray-600 rounded-lg text-white focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300 appearance-none"
-                  >
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
-                      <option key={num} value={num}>{num} Passenger{num > 1 ? 's' : ''}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              {/* Search Button */}
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                className="w-full bg-yellow-500 text-gray-900 px-6 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-all duration-300 hover:shadow-2xl flex items-center justify-center space-x-3"
-              >
-                <FaSearch />
-                <span>Search Flights</span>
-              </motion.button>
-            </form>
-          </motion.div>
-        </div>
-      </section>
+      {/* ✅ Manual Worldwide Flight Inquiry – prominent */}
+      <FlightInquiryForm />
 
       {/* Features Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-blue-900">
