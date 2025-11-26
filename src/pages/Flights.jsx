@@ -73,7 +73,7 @@ const Flights = () => {
   className="relative py-20"
   style={{
     backgroundImage:
-      "linear-gradient(to bottom, rgba(3,7,18,0.90), rgba(15,23,42,0.95)), url('/images/flight/flights-hero-bg.jpg')",
+      "linear-gradient(to bottom, rgba(3,7,18,0.90), rgba(15,23,42,0.70)), url('/images/flight/flights-hero-bg.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

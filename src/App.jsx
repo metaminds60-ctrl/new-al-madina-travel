@@ -9,6 +9,10 @@ import UmrahPackages from "./pages/UmrahPackages";
 import Services from './pages/Services'
 import Flights from './pages/Flights'
 import Contact from './pages/Contact'
+import HolidayPackages from "./pages/HolidayPackages";
+import CorporateTravel from "./pages/CorporateTravel";
+import NewVisaOffers from "./pages/Newvisaoffers";
+import DocumentAttestation from "./pages/DocumentAttestation";
 
 function App() {
   return (
@@ -23,7 +27,11 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/flights" element={<Flights />} />
             <Route path="/contact" element={<Contact />} />
-            
+            <Route path="/holiday-packages" element={<HolidayPackages />} />
+<Route path="/corporate-travel" element={<CorporateTravel />} />
+<Route path="/new-visa-offers" element={<NewVisaOffers />} />
+<Route path="/document-attestation" element={<DocumentAttestation />} />
+
           </Routes>
         </main>
         <Footer />
