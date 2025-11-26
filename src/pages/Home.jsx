@@ -18,7 +18,7 @@ import {
   FaAward,
   FaHandshake
 } from 'react-icons/fa'
-
+import JapanWorkPermitSection from '../components/JapanWorkPermitSection'
 const Home = () => {
   // Featured Destinations
   const featuredDestinations = [
@@ -320,6 +320,8 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+      {/* === JAPAN WORK PERMIT VISA === */}
+      <JapanWorkPermitSection />
 
       {/* === PREMIUM SERVICES === */}
       <section id="services" className="py-20 bg-gradient-to-br from-gray-900 to-blue-900">
