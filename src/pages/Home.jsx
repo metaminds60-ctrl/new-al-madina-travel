@@ -19,6 +19,10 @@ import {
   FaHandshake
 } from 'react-icons/fa'
 import JapanWorkPermitSection from '../components/JapanWorkPermitSection'
+import TravelInsuranceSection from "../components/home/TravelInsuranceSection";
+import HomeFAQSection from "../components/home/HomeFAQSection";
+import TopServicesSection from "../components/home/TopServicesSection";
+
 const Home = () => {
   // Featured Destinations
   const featuredDestinations = [
@@ -229,6 +233,9 @@ const Home = () => {
           </div>
         </motion.div>
       </section>
+      
+      {/* === TOP SERVICES STRIP (NEW) === */}
+      <TopServicesSection />
 
       {/* === FEATURED DESTINATIONS === */}
       <section id="destinations" className="py-20 bg-gray-900">
@@ -474,7 +481,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-
+{/* === TRAVEL INSURANCE & FAQ (COMPONENTS) === */}
+      <TravelInsuranceSection />
+      <HomeFAQSection />
       {/* === CTA SECTION === */}
       <section className="py-20 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-10"></div>
