@@ -34,7 +34,7 @@ const Navbar = () => {
     { name: "All Services", path: "/services" },
     { name: "Holiday & Tour Packages", path: "/holiday-packages" },
     { name: "Corporate Travel Solutions", path: "/corporate-travel" },
-    { name: "New Visa Offers", path: "/New-visa-offers" },
+    { name: "New Visa Offers", path: "/new-visa-offers" },
     { name: "Document & Attestation Services", path: "/document-attestation" },
   ];
 
