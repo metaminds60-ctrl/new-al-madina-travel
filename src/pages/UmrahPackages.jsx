@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
+import SeoHead from "../components/seo/SeoHead";
 import { motion } from "framer-motion";
 import { FaPlaneDeparture, FaHotel, FaBusAlt, FaRegHandshake } from "react-icons/fa";
 
@@ -69,14 +69,13 @@ const UmrahPackages = () => {
   ];
 
   return (
+  <>
+    <SeoHead
+      title="Umrah Packages from Lahore 2025 | New Al Madina Travels"
+      description="Book 21-day Umrah packages from Lahore, Pakistan with visa, Saudi Airlines flights, hotel accommodation in Makkah & Madinah, and transport included. Affordable Umrah packages starting from PKR 287,500."
+      path="/umrah-packages"
+    />
     <div className="bg-gradient-to-br from-gray-900 to-primary-dark text-white pt-32 pb-16">
-      <Helmet>
-        <title>Umrah Packages | New Al Madina Travel</title>
-        <meta
-          name="description"
-          content="Explore premium 21-day Umrah packages with hotel, flights, visa, and transport. Packages from PKR 287,500."
-        />
-      </Helmet>
 
       {/* Offer Popup */}
       {showOffer && (
@@ -198,7 +197,8 @@ const UmrahPackages = () => {
           All packages include: Umrah Visa, Air Ticket, Accommodation & Transport
         </p>
       </div>
-    </div>
+        </div>
+  </>
   );
 };
 

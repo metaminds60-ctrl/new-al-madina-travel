@@ -22,7 +22,7 @@ import JapanWorkPermitSection from '../components/JapanWorkPermitSection'
 import TravelInsuranceSection from "../components/home/TravelInsuranceSection";
 import HomeFAQSection from "../components/home/HomeFAQSection";
 import TopServicesSection from "../components/home/TopServicesSection";
-
+import SeoHead from '../components/seo/SeoHead'
 const Home = () => {
   // Featured Destinations
   const featuredDestinations = [
@@ -134,7 +134,13 @@ const Home = () => {
     { number: '98%', label: 'Visa Success' }
   ]
 
-  return (
+ return (
+  <>
+    <SeoHead
+      title="Travel Agency in Lahore | New Al Madina Travels Pakistan"
+      description="Leading travel agency in Lahore, Pakistan offering Umrah packages, Hajj services, visa processing, flight booking and international travel solutions."
+      path="/"
+    />
     <div className="pt-16">
       {/* === HERO SECTION === */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -544,7 +550,8 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+        </div>
+  </>
   )
 }
 

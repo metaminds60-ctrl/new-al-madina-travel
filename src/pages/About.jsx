@@ -1,4 +1,5 @@
 import React from 'react'
+import SeoHead from '../components/seo/SeoHead'
 import { motion } from 'framer-motion'
 import { 
   FaAward, 
@@ -141,6 +142,12 @@ const About = () => {
   ]
 
   return (
+  <>
+    <SeoHead
+      title="About New Al Madina Travels | Trusted Travel Agency in Lahore"
+      description="Learn about New Al Madina Travels, a leading travel agency in Lahore, Pakistan specializing in Umrah packages, Hajj services, visa processing, corporate travel and international flight bookings."
+      path="/about"
+    />
     <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-900 to-blue-900">
@@ -561,7 +568,8 @@ const About = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+        </div>
+  </>
   )
 }
 
