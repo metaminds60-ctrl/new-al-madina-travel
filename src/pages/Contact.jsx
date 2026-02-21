@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import SeoHead from '../components/seo/SeoHead'
 import { motion } from 'framer-motion'
 import { 
   FaPhone, 
@@ -29,14 +30,14 @@ const Contact = () => {
     {
       icon: FaPhone,
       title: 'Phone Numbers',
-      details: ['+92 316 049 4679', '+966 55 732 4894'],
+      details: ['+92 316 049 4679', '+966 57 988 0123'],
       description: 'Call us for immediate assistance',
       color: 'green'
     },
     {
       icon: FaEnvelope,
       title: 'Email Address',
-      details: ['info@newalmadinatravel.com', 'support@newalmadinatravel.com'],
+      details: ['info@newalmadinatravel.com', 'contact.newalmadinatravels@gmail.com'],
       description: 'Send us your query anytime!',
       color: 'blue'
     },
@@ -140,6 +141,12 @@ const Contact = () => {
   }
 
   return (
+  <>
+    <SeoHead
+      title="Contact New Al Madina Travels Lahore | Umrah, Visa & Flights Support"
+      description="Contact New Al Madina Travels in Lahore, Pakistan for Umrah packages, visa processing, flight booking and travel consultation. Call +92 316 049 4679 or visit our Urdu Bazar office."
+      path="/contact"
+    />
     <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-900 to-blue-900">
@@ -266,7 +273,7 @@ const Contact = () => {
                       Thank you for contacting us. We'll get back to you within 24 hours.
                     </p>
                     <p className="text-yellow-500 text-sm">
-                      You can also reach us directly at +966 12 345 6789
+                      You can also reach us directly at +92 316 049 4679
                     </p>
                   </motion.div>
                 ) : (
@@ -313,7 +320,7 @@ const Contact = () => {
                           value={formData.phone}
                           onChange={handleChange}
                           className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20 transition-all duration-300"
-                          placeholder="+966 12 345 6789"
+                          placeholder="+966 57 988 0123"
                         />
                       </div>
                       <div>
@@ -572,6 +579,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

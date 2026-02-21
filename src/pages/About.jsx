@@ -13,6 +13,37 @@ import {
 } from 'react-icons/fa'
 
 const About = () => {
+  const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "New Al Madina Travels",
+  "url": "https://www.newalmadinatravels.com/about",
+  "logo": "https://www.newalmadinatravels.com/images/og-image.jpg",
+  "foundingDate": "2008",
+  "founder": {
+    "@type": "Person",
+    "name": "Farhan Basharat"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kabir Street #3, Chowk Urdu Bazar",
+    "addressLocality": "Lahore",
+    "postalCode": "54000",
+    "addressCountry": "PK"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+92 316 049 4679",
+    "contactType": "customer service",
+    "areaServed": ["PK", "SA"],
+    "availableLanguage": ["English", "Urdu"]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "1000"
+  }
+}
   // Company Statistics
   const statistics = [
     { icon: FaUsers, number: '10,000+', label: 'Happy Customers', suffix: '' },
@@ -148,6 +179,9 @@ const About = () => {
       description="Learn about New Al Madina Travels, a leading travel agency in Lahore, Pakistan specializing in Umrah packages, Hajj services, visa processing, corporate travel and international flight bookings."
       path="/about"
     />
+    <script type="application/ld+json">
+  {JSON.stringify(aboutSchema)}
+</script>
     <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-900 to-blue-900">

@@ -1,4 +1,5 @@
 import React from 'react'
+import SeoHead from '../components/seo/SeoHead'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { 
@@ -476,6 +477,12 @@ const Services = () => {
   }
 
   return (
+  <>
+    <SeoHead
+      title="Travel & Visa Services in Lahore | New Al Madina Travels"
+      description="Professional travel and visa services in Lahore, Pakistan including Umrah packages, Hajj services, international flight booking, corporate travel management, document attestation and worldwide hotel reservations."
+      path="/services"
+    />
     <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-900 to-blue-900">
@@ -816,7 +823,8 @@ const Services = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+        </div>
+  </>
   )
 }
 

@@ -1,4 +1,6 @@
 import React from "react";
+import SeoHead from "../components/seo/SeoHead";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -161,7 +163,67 @@ const includes = [
 ];
 
 const HolidayPackages = () => {
+  const countryMeta = {
+  "saudi-arabia": {
+    title: "Saudi Arabia Holiday & Umrah Packages from Lahore",
+    description:
+      "Book Umrah and Saudi Arabia holiday packages from Lahore with hotel options near Haram, flights and guided support."
+  },
+  "united-arab-emirates": {
+    title: "Dubai & UAE Holiday Packages from Lahore",
+    description:
+      "Premium Dubai holiday packages including New Year tours, desert safari, Marina cruises and luxury hotel stays."
+  },
+  "japan": {
+    title: "Japan Travel & Work Related Trips from Pakistan",
+    description:
+      "Japan short stay and work-related travel planning from Pakistan with flights and pre-arrival arrangements."
+  },
+  "malaysia": {
+    title: "Malaysia Holiday Packages from Lahore",
+    description:
+      "Kuala Lumpur, Genting Highlands and island holiday packages with flight and hotel coordination."
+  }
+};
+const [dynamicMeta, setDynamicMeta] = useState({
+  title: "Holiday Packages from Lahore | Dubai, Umrah & Worldwide Tours",
+  description:
+    "Book premium holiday packages from Lahore including Umrah trips, Dubai New Year packages, Japan work travel and worldwide tours."
+});
+
+useEffect(() => {
+  const hash = window.location.hash.replace("#", "");
+
+  if (countryMeta[hash]) {
+    setDynamicMeta(countryMeta[hash]);
+  } else {
+    setDynamicMeta({
+      title: "Holiday Packages from Lahore | Dubai, Umrah & Worldwide Tours",
+      description:
+        "Book premium holiday packages from Lahore including Umrah trips, Dubai New Year packages, Japan work travel and worldwide tours."
+    });
+  }
+}, []);
   return (
+  <>
+   <SeoHead
+  title={dynamicMeta.title}
+  description={dynamicMeta.description}
+  path="/holiday-packages"
+/>
+    <script type="application/ld+json">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "Holiday & Tour Packages",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "New Al Madina Travels",
+      "areaServed": ["Pakistan", "Saudi Arabia", "UAE", "Qatar", "Bahrain", "Malaysia", "Thailand", "Japan", "United Kingdom"]
+    },
+    "availableLanguage": ["English", "Urdu"]
+  })}
+</script>
     <div className="pt-20 bg-gray-900 min-h-screen">
       {/* HERO SECTION WITH BACKGROUND IMAGE */}
       <section className="relative py-12 md:py-16 overflow-hidden">
@@ -184,6 +246,7 @@ const HolidayPackages = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          
               Premium{" "}
               <span className="text-yellow-500">Holiday & Tour Packages</span>
             </h1>
@@ -195,6 +258,13 @@ const HolidayPackages = () => {
               </span>
               – plan everything with one trusted agency.
             </p>
+            <p className="mt-6 text-gray-300 max-w-3xl mx-auto text-sm md:text-base leading-relaxed">
+  Looking for dedicated <Link to="/umrah-packages" className="text-yellow-400 hover:underline">Umrah packages from Lahore</Link>, 
+  international <Link to="/flights" className="text-yellow-400 hover:underline">flight booking services</Link> 
+  or personalized travel planning? Explore our complete 
+  <Link to="/services" className="text-yellow-400 hover:underline"> travel services</Link> 
+  designed for customers in Pakistan and Saudi Arabia.
+</p>
           </motion.div>
         </div>
       </section>
@@ -301,7 +371,8 @@ const HolidayPackages = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {countryPackages.map((item, index) => (
               <motion.div
-                key={item.country}
+  key={item.country}
+  id={item.country.toLowerCase().replace(/\s+/g, "-")}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
@@ -338,6 +409,32 @@ const HolidayPackages = () => {
           </div>
         </div>
       </section>
+      <section className="py-12 bg-gray-900 border-t border-gray-800">
+  <div className="max-w-6xl mx-auto px-4 text-center">
+    <h3 className="text-2xl font-bold text-white mb-4">
+      Explore More Travel Services in Lahore
+    </h3>
+    <p className="text-gray-400 mb-6">
+      New Al Madina Travels offers complete travel solutions including 
+      Hajj & Umrah arrangements, visa processing, corporate travel 
+      and international tour planning from Lahore.
+    </p>
+    <div className="flex flex-wrap justify-center gap-4">
+      <Link to="/umrah-packages" className="text-yellow-400 hover:underline font-semibold">
+        Umrah Packages
+      </Link>
+      <Link to="/flights" className="text-yellow-400 hover:underline font-semibold">
+        Flight Booking
+      </Link>
+      <Link to="/about" className="text-yellow-400 hover:underline font-semibold">
+        About Our Agency
+      </Link>
+      <Link to="/contact" className="text-yellow-400 hover:underline font-semibold">
+        Contact Travel Experts
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* WHAT'S INCLUDED + CTA – WITH BG IMAGE + EXTRA GAP */}
       <section className="relative mt-16 pb-20 bg-gray-900 overflow-hidden">
@@ -417,6 +514,7 @@ const HolidayPackages = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

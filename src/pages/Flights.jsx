@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import SeoHead from '../components/seo/SeoHead'
 import { motion } from 'framer-motion'
 import { FaSearch, FaPlane, FaHeadset, FaStar, FaCheck } from 'react-icons/fa'
 import FlightInquiryForm from '../components/FlightInquiryForm'
@@ -67,6 +68,12 @@ const Flights = () => {
   }
 
   return (
+  <>
+    <SeoHead
+      title="Cheap Flight Booking from Lahore | New Al Madina Travels"
+      description="Book cheap international and domestic flights from Lahore, Pakistan with best fares, 500+ airlines, secure payment and 24/7 customer support. Get exclusive flight deals worldwide."
+      path="/flights"
+    />
     <div className="pt-20">
             {/* Hero Section */}
 <section
@@ -262,6 +269,7 @@ const Flights = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }
 
