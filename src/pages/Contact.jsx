@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import SeoHead from '../components/seo/SeoHead'
+import { Link } from "react-router-dom";
 import { motion } from 'framer-motion'
 import { 
   FaPhone, 
@@ -380,6 +381,13 @@ const Contact = () => {
                     <p className="text-gray-400 text-sm text-center">
                       By submitting this form, you agree to our privacy policy and terms of service.
                     </p>
+                    <p className="mt-8 text-gray-400 text-sm text-center">
+  Our team can assist with 
+  <Link to="/umrah-packages" className="text-yellow-400 hover:underline"> Umrah arrangements</Link>, 
+  <Link to="/flights" className="text-yellow-400 hover:underline"> flight bookings</Link>, 
+  visa services and complete 
+  <Link to="/holiday-packages" className="text-yellow-400 hover:underline"> holiday planning</Link>.
+</p>
                   </form>
                 )}
               </div>

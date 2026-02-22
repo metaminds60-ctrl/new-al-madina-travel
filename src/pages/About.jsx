@@ -1,5 +1,6 @@
 import React from 'react'
 import SeoHead from '../components/seo/SeoHead'
+import { Link } from "react-router-dom";
 import { motion } from 'framer-motion'
 import { 
   FaAward, 
@@ -583,6 +584,12 @@ const About = () => {
               Join thousands of satisfied customers who have trusted us with their travel dreams. 
               Let's create your perfect journey together.
             </p>
+            <p className="mt-6 text-gray-300 text-sm text-center">
+  Discover our full range of services including 
+  <Link to="/umrah-packages" className="text-yellow-400 hover:underline"> Umrah travel</Link>, 
+  international <Link to="/flights" className="text-yellow-400 hover:underline"> flight booking</Link> 
+  and customized <Link to="/holiday-packages" className="text-yellow-400 hover:underline"> holiday packages</Link>.
+</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}

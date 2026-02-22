@@ -192,17 +192,32 @@ const [dynamicMeta, setDynamicMeta] = useState({
 });
 
 useEffect(() => {
-  const hash = window.location.hash.replace("#", "");
 
-  if (countryMeta[hash]) {
-    setDynamicMeta(countryMeta[hash]);
-  } else {
-    setDynamicMeta({
-      title: "Holiday Packages from Lahore | Dubai, Umrah & Worldwide Tours",
-      description:
-        "Book premium holiday packages from Lahore including Umrah trips, Dubai New Year packages, Japan work travel and worldwide tours."
-    });
-  }
+  const updateMetaFromHash = () => {
+    const hash = window.location.hash.replace("#", "");
+
+    if (countryMeta[hash]) {
+      setDynamicMeta(countryMeta[hash]);
+    } else {
+      setDynamicMeta({
+        title: "Holiday Packages from Lahore | Dubai, Umrah & Worldwide Tours",
+        description:
+          "Book premium holiday packages from Lahore including Umrah trips, Dubai New Year packages, Japan work travel and worldwide tours."
+      });
+    }
+  };
+
+  // Run once on page load
+  updateMetaFromHash();
+
+  // Listen for hash change
+  window.addEventListener("hashchange", updateMetaFromHash);
+
+  // Cleanup listener
+  return () => {
+    window.removeEventListener("hashchange", updateMetaFromHash);
+  };
+
 }, []);
   return (
   <>
@@ -214,14 +229,16 @@ useEffect(() => {
     <script type="application/ld+json">
   {JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "TouristTrip",
+    "@type": "Service",
     "name": "Holiday & Tour Packages",
     "provider": {
       "@type": "TravelAgency",
       "name": "New Al Madina Travels",
-      "areaServed": ["Pakistan", "Saudi Arabia", "UAE", "Qatar", "Bahrain", "Malaysia", "Thailand", "Japan", "United Kingdom"]
+      "@id": "https://www.newalmadinatravels.com/#organization"
     },
-    "availableLanguage": ["English", "Urdu"]
+    "areaServed": ["Pakistan", "Saudi Arabia", "UAE", "Malaysia", "Thailand", "Japan", "United Kingdom"],
+    "description": "Customized international holiday packages from Lahore including Dubai tours, Japan travel and worldwide vacation planning.",
+    "url": "https://www.newalmadinatravels.com/holiday-packages"
   })}
 </script>
     <div className="pt-20 bg-gray-900 min-h-screen">

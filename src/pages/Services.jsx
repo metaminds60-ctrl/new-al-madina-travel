@@ -483,6 +483,19 @@ const Services = () => {
       description="Professional travel and visa services in Lahore, Pakistan including Umrah packages, Hajj services, international flight booking, corporate travel management, document attestation and worldwide hotel reservations."
       path="/services"
     />
+    <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Visa Processing Services",
+  "provider": {
+    "@type": "TravelAgency",
+    "name": "New Al Madina Travels"
+  },
+  "areaServed": ["Pakistan", "Saudi Arabia"],
+  "description": "Professional visa processing assistance for tourist, business and student visas."
+})}
+</script>
     <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-900 to-blue-900">
@@ -796,6 +809,13 @@ const Services = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Contact our travel experts today and let us create the perfect travel experience tailored to your needs.
             </p>
+            <p className="mt-8 text-gray-400 text-sm leading-relaxed text-center">
+  Explore our dedicated 
+  <Link to="/umrah-packages" className="text-yellow-400 hover:underline"> Umrah packages</Link>, 
+  worldwide <Link to="/flights" className="text-yellow-400 hover:underline"> flight bookings</Link> 
+  and premium <Link to="/holiday-packages" className="text-yellow-400 hover:underline"> holiday tours</Link> 
+  tailored for travelers from Lahore and across Pakistan.
+</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div
                 whileHover={{ scale: 1.05 }}

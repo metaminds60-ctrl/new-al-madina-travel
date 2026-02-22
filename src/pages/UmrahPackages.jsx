@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SeoHead from "../components/seo/SeoHead";
 import { motion } from "framer-motion";
 import { FaPlaneDeparture, FaHotel, FaBusAlt, FaRegHandshake } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 const UmrahPackages = () => {
   // Offer Popup State
   const [showOffer, setShowOffer] = useState(true);
@@ -75,6 +75,23 @@ const UmrahPackages = () => {
       description="Book 21-day Umrah packages from Lahore, Pakistan with visa, Saudi Airlines flights, hotel accommodation in Makkah & Madinah, and transport included. Affordable Umrah packages starting from PKR 287,500."
       path="/umrah-packages"
     />
+    <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Umrah Packages",
+      "provider": {
+        "@type": "TravelAgency",
+        "name": "New Al Madina Travels",
+        "@id": "https://www.newalmadinatravels.com/#organization"
+      },
+      "areaServed": ["Pakistan", "Saudi Arabia"],
+      "description": "Premium Umrah packages from Lahore with hotels near Haram, flights and complete guidance.",
+      "url": "https://www.newalmadinatravels.com/umrah-packages"
+    })}
+  </script>
+
+  <div className="bg-gradient-to-br from-gray-900 to-primary-dark text-white pt-32 pb-16"></div>
     <div className="bg-gradient-to-br from-gray-900 to-primary-dark text-white pt-32 pb-16">
 
       {/* Offer Popup */}
@@ -140,6 +157,13 @@ const UmrahPackages = () => {
           <p className="text-gray-200 text-lg mt-4">
             Traveling From Lahore – choose the perfect package for your blessed journey
           </p>
+          <p className="mt-6 text-gray-300 text-sm md:text-base leading-relaxed">
+  Planning beyond Umrah? Explore our complete 
+  <Link to="/holiday-packages" className="text-yellow-400 hover:underline"> holiday packages</Link>, 
+  international <Link to="/flights" className="text-yellow-400 hover:underline"> flight booking services</Link> 
+  and personalized <Link to="/services" className="text-yellow-400 hover:underline"> visa assistance</Link> 
+  from Lahore and Saudi Arabia.
+</p>
         </motion.div>
       </section>
 

@@ -3,7 +3,7 @@ import SeoHead from '../components/seo/SeoHead'
 import { motion } from 'framer-motion'
 import { FaSearch, FaPlane, FaHeadset, FaStar, FaCheck } from 'react-icons/fa'
 import FlightInquiryForm from '../components/FlightInquiryForm'
-
+import { Link } from "react-router-dom";
 const Flights = () => {
   const [formData, setFormData] = useState({
     from: '',
@@ -74,6 +74,19 @@ const Flights = () => {
       description="Book cheap international and domestic flights from Lahore, Pakistan with best fares, 500+ airlines, secure payment and 24/7 customer support. Get exclusive flight deals worldwide."
       path="/flights"
     />
+    <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Flight Booking Services",
+  "provider": {
+    "@type": "TravelAgency",
+    "name": "New Al Madina Travels"
+  },
+  "areaServed": ["Pakistan", "Saudi Arabia", "UAE", "Qatar", "Bahrain"],
+  "description": "International and domestic flight booking services with competitive fares and full travel assistance."
+})}
+</script>
     <div className="pt-20">
             {/* Hero Section */}
 <section
@@ -106,6 +119,12 @@ const Flights = () => {
       </span>{" "}
       for any destination worldwide.
     </motion.p>
+    <p className="mt-6 text-gray-300 text-sm md:text-base leading-relaxed">
+  Need complete travel planning? Combine your flights with our 
+  <Link to="/umrah-packages" className="text-yellow-400 hover:underline"> Umrah packages</Link>, 
+  customized <Link to="/holiday-packages" className="text-yellow-400 hover:underline"> holiday tours</Link> 
+  or professional <Link to="/services" className="text-yellow-400 hover:underline"> visa processing services</Link>.
+</p>
   </div>
 </section>
   
