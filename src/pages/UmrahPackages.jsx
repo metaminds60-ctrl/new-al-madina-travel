@@ -74,6 +74,7 @@ const UmrahPackages = () => {
       title="Umrah Packages from Lahore 2025 | New Al Madina Travels"
       description="Book 21-day Umrah packages from Lahore, Pakistan with visa, Saudi Airlines flights, hotel accommodation in Makkah & Madinah, and transport included. Affordable Umrah packages starting from PKR 287,500."
       path="/umrah-packages"
+      image="/images/og-umrah.jpg"
     />
     <script type="application/ld+json">
     {JSON.stringify({

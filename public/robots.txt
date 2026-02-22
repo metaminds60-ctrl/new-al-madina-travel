@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# Block unnecessary paths (future ready)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /dashboard/
+
+# Sitemap location
 Sitemap: https://www.newalmadinatravels.com/sitemap.xml

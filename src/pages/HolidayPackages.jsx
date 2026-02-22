@@ -225,6 +225,7 @@ useEffect(() => {
   title={dynamicMeta.title}
   description={dynamicMeta.description}
   path="/holiday-packages"
+  image="/images/og-holiday.jpg"
 />
     <script type="application/ld+json">
   {JSON.stringify({

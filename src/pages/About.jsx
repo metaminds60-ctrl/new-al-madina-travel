@@ -179,6 +179,7 @@ const About = () => {
       title="About New Al Madina Travels | Trusted Travel Agency in Lahore"
       description="Learn about New Al Madina Travels, a leading travel agency in Lahore, Pakistan specializing in Umrah packages, Hajj services, visa processing, corporate travel and international flight bookings."
       path="/about"
+      image="/images/og-about.jpg"
     />
     <script type="application/ld+json">
   {JSON.stringify(aboutSchema)}

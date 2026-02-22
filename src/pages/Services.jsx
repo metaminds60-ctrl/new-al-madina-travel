@@ -482,6 +482,7 @@ const Services = () => {
       title="Travel & Visa Services in Lahore | New Al Madina Travels"
       description="Professional travel and visa services in Lahore, Pakistan including Umrah packages, Hajj services, international flight booking, corporate travel management, document attestation and worldwide hotel reservations."
       path="/services"
+      image="/images/og-services.jpg"
     />
     <script type="application/ld+json">
 {JSON.stringify({

@@ -73,6 +73,7 @@ const Flights = () => {
       title="Cheap Flight Booking from Lahore | New Al Madina Travels"
       description="Book cheap international and domestic flights from Lahore, Pakistan with best fares, 500+ airlines, secure payment and 24/7 customer support. Get exclusive flight deals worldwide."
       path="/flights"
+      image="/images/og-flights.jpg"
     />
     <script type="application/ld+json">
 {JSON.stringify({
