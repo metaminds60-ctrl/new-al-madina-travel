@@ -1,4 +1,5 @@
 import React from 'react'
+import Breadcrumb from "../components/seo/Breadcrumb";
 import SeoHead from '../components/seo/SeoHead'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
@@ -491,13 +492,17 @@ const Services = () => {
   "name": "Visa Processing Services",
   "provider": {
     "@type": "TravelAgency",
-    "name": "New Al Madina Travels"
+    "name": "New Al Madina Travels",
+    "@id": "https://www.newalmadinatravels.com/#organization"
   },
   "areaServed": ["Pakistan", "Saudi Arabia"],
   "description": "Professional visa processing assistance for tourist, business and student visas."
 })}
 </script>
     <div className="pt-20">
+      <div className="max-w-7xl mx-auto px-4">
+  <Breadcrumb />
+</div>
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-900 to-blue-900">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" 

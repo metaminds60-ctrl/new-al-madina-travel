@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Breadcrumb from "../components/seo/Breadcrumb";
 import SeoHead from '../components/seo/SeoHead'
 import { motion } from 'framer-motion'
 import { FaSearch, FaPlane, FaHeadset, FaStar, FaCheck } from 'react-icons/fa'
@@ -81,14 +82,42 @@ const Flights = () => {
   "@type": "Service",
   "name": "Flight Booking Services",
   "provider": {
-    "@type": "TravelAgency",
-    "name": "New Al Madina Travels"
+  "@type": "TravelAgency",
+  "name": "New Al Madina Travels",
+  "@id": "https://www.newalmadinatravels.com/#organization"
   },
   "areaServed": ["Pakistan", "Saudi Arabia", "UAE", "Qatar", "Bahrain"],
   "description": "International and domestic flight booking services with competitive fares and full travel assistance."
 })}
 </script>
+<script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the cheapest flight from Lahore to Jeddah?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flight prices vary by season, but we help you find the lowest manual fares with trusted airlines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I book one-way and return tickets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer one-way, return and multi-city flight booking options."
+      }
+    }
+  ]
+})}
+</script>
     <div className="pt-20">
+      <div className="max-w-7xl mx-auto px-4">
+  <Breadcrumb />
+</div>
             {/* Hero Section */}
 <section
   className="relative py-20"
@@ -128,7 +157,34 @@ const Flights = () => {
 </p>
   </div>
 </section>
-  
+  <section className="py-12 bg-gray-900">
+  <div className="max-w-4xl mx-auto px-4">
+    <h2 className="text-2xl font-bold text-white mb-6">
+      Frequently Asked Questions
+    </h2>
+
+    <div className="space-y-4 text-gray-300">
+      <div>
+        <h3 className="font-semibold text-yellow-500">
+          What is the cheapest flight from Lahore to Jeddah?
+        </h3>
+        <p>
+          Flight prices vary by season, but we help you find the lowest manual
+          fares with trusted international airlines.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="font-semibold text-yellow-500">
+          Can I book one-way and return tickets?
+        </h3>
+        <p>
+          Yes, we offer one-way, return and multi-city booking options.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ✅ Manual Worldwide Flight Inquiry – prominent */}
       <FlightInquiryForm />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Breadcrumb from "../components/seo/Breadcrumb";
 import SeoHead from "../components/seo/SeoHead";
 import { motion } from "framer-motion";
 import { FaPlaneDeparture, FaHotel, FaBusAlt, FaRegHandshake } from "react-icons/fa";
@@ -106,6 +107,9 @@ const UmrahPackages = () => {
           🎉 New Offer! Book Early & Save up to 10% on Umrah Packages!
         </motion.div>
       )}
+      <div className="max-w-7xl mx-auto px-4">
+  <Breadcrumb />
+</div>
 
       {/* HERO COVER (between header & cards) */}
       <section className="relative max-w-7xl mx-auto px-6 mb-12">

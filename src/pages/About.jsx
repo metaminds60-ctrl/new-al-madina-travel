@@ -1,4 +1,5 @@
 import React from 'react'
+import Breadcrumb from "../components/seo/Breadcrumb";
 import SeoHead from '../components/seo/SeoHead'
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion'
@@ -185,6 +186,9 @@ const About = () => {
   {JSON.stringify(aboutSchema)}
 </script>
     <div className="pt-20">
+      <div className="max-w-7xl mx-auto px-4">
+  <Breadcrumb />
+</div>
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-900 to-blue-900">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" 

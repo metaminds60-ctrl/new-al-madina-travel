@@ -39,6 +39,23 @@ const SeoHead = ({
       <meta name="geo.placename" content="Lahore" />
       <meta name="geo.position" content="31.5204;74.3587" />
       <meta name="ICBM" content="31.5204, 74.3587" />
+      <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": window.location.pathname
+    .split("/")
+    .filter(Boolean)
+    .map((segment, index, array) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": segment.replace("-", " "),
+      "item":
+        "https://www.newalmadinatravels.com/" +
+        array.slice(0, index + 1).join("/")
+    }))
+})}
+</script>
     </Helmet>
   );
 };

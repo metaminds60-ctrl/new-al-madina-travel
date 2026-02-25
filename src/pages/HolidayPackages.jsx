@@ -1,4 +1,5 @@
 import React from "react";
+import Breadcrumb from "../components/seo/Breadcrumb";
 import SeoHead from "../components/seo/SeoHead";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -243,6 +244,9 @@ useEffect(() => {
   })}
 </script>
     <div className="pt-20 bg-gray-900 min-h-screen">
+      <div className="max-w-7xl mx-auto px-4">
+  <Breadcrumb />
+</div>
       {/* HERO SECTION WITH BACKGROUND IMAGE */}
       <section className="relative py-12 md:py-16 overflow-hidden">
         {/* background image */}
