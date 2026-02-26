@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Breadcrumb from "../components/seo/Breadcrumb";
-import SeoHead from "../components/seo/SeoHead";
+import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { FaPlaneDeparture, FaHotel, FaBusAlt, FaRegHandshake } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 const UmrahPackages = () => {
   // Offer Popup State
   const [showOffer, setShowOffer] = useState(true);
@@ -70,45 +69,14 @@ const UmrahPackages = () => {
   ];
 
   return (
-  <>
-    <SeoHead
-      title="Umrah Packages from Lahore 2025 | New Al Madina Travels"
-      description="Book 21-day Umrah packages from Lahore, Pakistan with visa, Saudi Airlines flights, hotel accommodation in Makkah & Madinah, and transport included. Affordable Umrah packages starting from PKR 287,500."
-      path="/umrah-packages"
-      image="/images/og-umrah.jpg"
-    />
-    <script type="application/ld+json">
-{JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "Why is New Al Madina Travels considered one of the best travel agencies in Lahore?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "New Al Madina Travels provides reliable Umrah packages, flight booking and visa services with transparent pricing and professional support from Lahore."
-    }
-  }]
-})}
-</script>
-    <script type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Umrah Packages",
-      "provider": {
-        "@type": "TravelAgency",
-        "name": "New Al Madina Travels",
-        "@id": "https://www.newalmadinatravels.com/#organization"
-      },
-      "areaServed": ["Pakistan", "Saudi Arabia"],
-      "description": "Premium Umrah packages from Lahore with hotels near Haram, flights and complete guidance.",
-      "url": "https://www.newalmadinatravels.com/umrah-packages"
-    })}
-  </script>
-
-  <div className="bg-gradient-to-br from-gray-900 to-primary-dark text-white pt-32 pb-16"></div>
     <div className="bg-gradient-to-br from-gray-900 to-primary-dark text-white pt-32 pb-16">
+      <Helmet>
+        <title>Umrah Packages | New Al Madina Travel</title>
+        <meta
+          name="description"
+          content="Explore premium 21-day Umrah packages with hotel, flights, visa, and transport. Packages from PKR 287,500."
+        />
+      </Helmet>
 
       {/* Offer Popup */}
       {showOffer && (
@@ -121,9 +89,6 @@ const UmrahPackages = () => {
           🎉 New Offer! Book Early & Save up to 10% on Umrah Packages!
         </motion.div>
       )}
-      <div className="max-w-7xl mx-auto px-4">
-  <Breadcrumb />
-</div>
 
       {/* HERO COVER (between header & cards) */}
       <section className="relative max-w-7xl mx-auto px-6 mb-12">
@@ -166,9 +131,6 @@ const UmrahPackages = () => {
             <img
               src="/images/umrahpackages/saudi-airlines-logo.png"
               alt="Saudi Airlines Logo"
-              loading="lazy"
-width="600"
-height="400"
               className="w-28 h-auto object-contain hover:drop-shadow-[0_0_10px_#ffd700] transition-all duration-300"
             />
             <p className="text-primary-gold mt-2 font-semibold">
@@ -179,13 +141,6 @@ height="400"
           <p className="text-gray-200 text-lg mt-4">
             Traveling From Lahore – choose the perfect package for your blessed journey
           </p>
-          <p className="mt-6 text-gray-300 text-sm md:text-base leading-relaxed">
-  Planning beyond Umrah? Explore our complete 
-  <Link to="/holiday-packages" className="text-yellow-400 hover:underline"> holiday packages</Link>, 
-  international <Link to="/flights" className="text-yellow-400 hover:underline"> flight booking services</Link> 
-  and personalized <Link to="/services" className="text-yellow-400 hover:underline"> visa assistance</Link> 
-  from Lahore and Saudi Arabia.
-</p>
         </motion.div>
       </section>
 
@@ -243,8 +198,7 @@ height="400"
           All packages include: Umrah Visa, Air Ticket, Accommodation & Transport
         </p>
       </div>
-        </div>
-  </>
+    </div>
   );
 };
 

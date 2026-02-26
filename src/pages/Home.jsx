@@ -304,9 +304,6 @@ const Home = () => {
                   <img
                     src={destination.image}
                     alt={destination.name}
-                    loading="lazy"
-                    width="600"
-                    height="400"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
@@ -498,9 +495,6 @@ const Home = () => {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    loading="lazy"
-                    width="600"
-                    height="400"
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
