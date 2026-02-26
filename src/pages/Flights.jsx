@@ -79,6 +79,20 @@ const Flights = () => {
     <script type="application/ld+json">
 {JSON.stringify({
   "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Why is New Al Madina Travels considered one of the best travel agencies in Lahore?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "New Al Madina Travels provides reliable Umrah packages, flight booking and visa services with transparent pricing and professional support from Lahore."
+    }
+  }]
+})}
+</script>
+    <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
   "@type": "Service",
   "name": "Flight Booking Services",
   "provider": {
@@ -185,7 +199,21 @@ const Flights = () => {
     </div>
   </div>
 </section>
+<section className="py-10 bg-gray-900">
+  <div className="max-w-4xl mx-auto px-4 text-gray-300">
 
+    <h2 className="text-2xl font-bold text-white mb-4">
+      How can I find the cheapest flight from Lahore to Jeddah?
+    </h2>
+
+    <p>
+      To find the cheapest flight from Lahore to Jeddah, compare flexible travel dates, 
+      early booking options and airline routes. Our team manually checks fare systems 
+      to secure competitive rates for Umrah and business travelers.
+    </p>
+
+  </div>
+</section>
       {/* ✅ Manual Worldwide Flight Inquiry – prominent */}
       <FlightInquiryForm />
 

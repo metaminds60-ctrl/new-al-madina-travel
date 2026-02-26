@@ -136,6 +136,20 @@ const Home = () => {
 
  return (
   <>
+  <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Why is New Al Madina Travels considered one of the best travel agencies in Lahore?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "New Al Madina Travels provides reliable Umrah packages, flight booking and visa services with transparent pricing and professional support from Lahore."
+    }
+  }]
+})}
+</script>
     <SeoHead
       title="Travel Agency in Lahore | New Al Madina Travels Pakistan"
       description="Leading travel agency in Lahore, Pakistan offering Umrah packages, Hajj services, visa processing, flight booking and international travel solutions."
@@ -239,7 +253,21 @@ const Home = () => {
           </div>
         </motion.div>
       </section>
-      
+      <section className="py-10 bg-gray-900">
+  <div className="max-w-4xl mx-auto px-4 text-gray-300">
+
+    <h2 className="text-2xl font-bold text-white mb-4">
+      What is the average Umrah package price from Lahore?
+    </h2>
+
+    <p>
+      Umrah package prices from Lahore usually start from economy options and increase based on 
+      hotel distance from Haram, flight category and travel season. We offer multiple 10, 14 and 
+      21-day packages with flexible hotel and airline options.
+    </p>
+
+  </div>
+</section>
       {/* === TOP SERVICES STRIP (NEW) === */}
       <TopServicesSection />
 
@@ -276,6 +304,9 @@ const Home = () => {
                   <img
                     src={destination.image}
                     alt={destination.name}
+                    loading="lazy"
+                    width="600"
+                    height="400"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
@@ -467,6 +498,9 @@ const Home = () => {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
+                    loading="lazy"
+                    width="600"
+                    height="400"
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>

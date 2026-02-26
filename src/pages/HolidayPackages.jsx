@@ -228,6 +228,20 @@ useEffect(() => {
   path="/holiday-packages"
   image="/images/og-holiday.jpg"
 />
+<script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Why is New Al Madina Travels considered one of the best travel agencies in Lahore?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "New Al Madina Travels provides reliable Umrah packages, flight booking and visa services with transparent pricing and professional support from Lahore."
+    }
+  }]
+})}
+</script>
     <script type="application/ld+json">
   {JSON.stringify({
     "@context": "https://schema.org",
@@ -290,7 +304,21 @@ useEffect(() => {
           </motion.div>
         </div>
       </section>
+<section className="py-10 bg-gray-900">
+  <div className="max-w-4xl mx-auto px-4 text-gray-300">
 
+    <h2 className="text-2xl font-bold text-white mb-4">
+      How much does a Dubai New Year package cost from Lahore?
+    </h2>
+
+    <p>
+      Dubai New Year package costs depend on hotel category, travel dates and included 
+      experiences like desert safari or Marina cruise. Prices increase during peak 
+      New Year season, so early booking ensures better availability and rates.
+    </p>
+
+  </div>
+</section>
       {/* PRIORITY SERVICES HIGHLIGHT */}
       <section className="py-14 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

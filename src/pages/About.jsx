@@ -183,6 +183,20 @@ const About = () => {
       image="/images/og-about.jpg"
     />
     <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Why is New Al Madina Travels considered one of the best travel agencies in Lahore?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "New Al Madina Travels provides reliable Umrah packages, flight booking and visa services with transparent pricing and professional support from Lahore."
+    }
+  }]
+})}
+</script>
+    <script type="application/ld+json">
   {JSON.stringify(aboutSchema)}
 </script>
     <div className="pt-20">
@@ -498,6 +512,9 @@ const About = () => {
                   <img
                     src={member.image}
                     alt={member.name}
+                    loading="lazy"
+  width="600"
+  height="400"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>

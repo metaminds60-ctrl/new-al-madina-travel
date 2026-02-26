@@ -488,6 +488,20 @@ const Services = () => {
     <script type="application/ld+json">
 {JSON.stringify({
   "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Why is New Al Madina Travels considered one of the best travel agencies in Lahore?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "New Al Madina Travels provides reliable Umrah packages, flight booking and visa services with transparent pricing and professional support from Lahore."
+    }
+  }]
+})}
+</script>
+    <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
   "@type": "Service",
   "name": "Visa Processing Services",
   "provider": {

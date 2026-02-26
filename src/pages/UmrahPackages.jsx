@@ -78,6 +78,20 @@ const UmrahPackages = () => {
       image="/images/og-umrah.jpg"
     />
     <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Why is New Al Madina Travels considered one of the best travel agencies in Lahore?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "New Al Madina Travels provides reliable Umrah packages, flight booking and visa services with transparent pricing and professional support from Lahore."
+    }
+  }]
+})}
+</script>
+    <script type="application/ld+json">
     {JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Service",
@@ -152,6 +166,9 @@ const UmrahPackages = () => {
             <img
               src="/images/umrahpackages/saudi-airlines-logo.png"
               alt="Saudi Airlines Logo"
+              loading="lazy"
+width="600"
+height="400"
               className="w-28 h-auto object-contain hover:drop-shadow-[0_0_10px_#ffd700] transition-all duration-300"
             />
             <p className="text-primary-gold mt-2 font-semibold">

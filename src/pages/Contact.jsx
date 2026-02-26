@@ -148,6 +148,20 @@ const Contact = () => {
       description="Contact New Al Madina Travels in Lahore, Pakistan for Umrah packages, visa processing, flight booking and travel consultation. Call +92 316 049 4679 or visit our Urdu Bazar office."
       path="/contact"
     />
+    <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Why is New Al Madina Travels considered one of the best travel agencies in Lahore?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "New Al Madina Travels provides reliable Umrah packages, flight booking and visa services with transparent pricing and professional support from Lahore."
+    }
+  }]
+})}
+</script>
     <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-900 to-blue-900">
