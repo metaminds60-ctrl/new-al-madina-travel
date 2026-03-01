@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
+import SeoHead from "../components/seo/SeoHead";
+import Breadcrumb from "../components/seo/Breadcrumb";
 import { motion } from "framer-motion";
 import { FaPlaneDeparture, FaHotel, FaBusAlt, FaRegHandshake } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 const UmrahPackages = () => {
   // Offer Popup State
   const [showOffer, setShowOffer] = useState(true);
@@ -69,14 +70,42 @@ const UmrahPackages = () => {
   ];
 
   return (
+  <>
+    <SeoHead
+  title="Umrah Packages from Lahore | New Al Madina Travels"
+  description="Book premium Umrah packages from Lahore with hotels near Haram, flights and complete guidance."
+  path="/umrah-packages"
+  image="/images/og-umrah.jpg"
+/>
+<script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Why is New Al Madina Travels considered one of the best travel agencies in Lahore?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "New Al Madina Travels provides reliable Umrah packages, flight booking and visa services with transparent pricing and professional support from Lahore."
+    }
+  }]
+})}
+</script>
+    <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Umrah Packages",
+  "provider": {
+    "@type": "TravelAgency",
+    "name": "New Al Madina Travels"
+  },
+  "areaServed": ["Pakistan", "Saudi Arabia"],
+  "description": "Premium Umrah packages from Lahore with hotels near Haram, flights and complete guidance."
+})}
+</script>
     <div className="bg-gradient-to-br from-gray-900 to-primary-dark text-white pt-32 pb-16">
-      <Helmet>
-        <title>Umrah Packages | New Al Madina Travel</title>
-        <meta
-          name="description"
-          content="Explore premium 21-day Umrah packages with hotel, flights, visa, and transport. Packages from PKR 287,500."
-        />
-      </Helmet>
+      
 
       {/* Offer Popup */}
       {showOffer && (
@@ -89,7 +118,9 @@ const UmrahPackages = () => {
           🎉 New Offer! Book Early & Save up to 10% on Umrah Packages!
         </motion.div>
       )}
-
+<div className="max-w-7xl mx-auto px-4">
+  <Breadcrumb />
+</div>
       {/* HERO COVER (between header & cards) */}
       <section className="relative max-w-7xl mx-auto px-6 mb-12">
         {/* Background image */}
@@ -141,6 +172,13 @@ const UmrahPackages = () => {
           <p className="text-gray-200 text-lg mt-4">
             Traveling From Lahore – choose the perfect package for your blessed journey
           </p>
+          <p className="mt-6 text-gray-300 text-sm md:text-base leading-relaxed">
+  Planning beyond Umrah? Explore our complete 
+  <Link to="/holiday-packages" className="text-yellow-400 hover:underline"> holiday packages</Link>, 
+  international <Link to="/flights" className="text-yellow-400 hover:underline"> flight booking services</Link> 
+  and personalized <Link to="/services" className="text-yellow-400 hover:underline"> visa assistance</Link> 
+  from Lahore and Saudi Arabia.
+</p>
         </motion.div>
       </section>
 
@@ -199,6 +237,7 @@ const UmrahPackages = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 
