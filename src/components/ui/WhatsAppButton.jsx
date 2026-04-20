@@ -4,7 +4,7 @@ import { FaWhatsapp, FaTimes } from 'react-icons/fa'
 
 const WhatsAppButton = () => {
   const handleClick = () => {
-    const phoneNumber = '+923160494679' // Saudi Arabia number format
+    const phoneNumber = '+966579880213' // Saudi Arabia number format
     const message = 'Hello! I would like to inquire about your travel services and get more information.'
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(url, '_blank')
