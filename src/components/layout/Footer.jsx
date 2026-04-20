@@ -159,12 +159,13 @@ const Footer = () => {
                   Kabir Street, Chowk Urdu Bazar, Lahore
                 </span>
               </div>
-              <div className="flex items-center space-x-3 group">
-                <FaPhone className="text-yellow-500 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-gray-400 group-hover:text-white transition-colors duration-300">
-                  +92 316 049 4679
-                </span>
-              </div>
+              <div className="flex items-start space-x-3 group">
+  <FaPhone className="text-yellow-500 mt-1 group-hover:scale-110 transition-transform duration-300" />
+  <div className="text-gray-400 group-hover:text-white transition-colors duration-300 leading-relaxed">
+    <p>PAK: +92 307 4074059</p>
+    <p>KSA: +966 57 988 0213</p>
+  </div>
+</div>
               <div className="flex items-center space-x-3 group">
                 <FaEnvelope className="text-yellow-500 group-hover:scale-110 transition-transform duration-300" />
                 <span className="text-gray-400 group-hover:text-white transition-colors duration-300">
