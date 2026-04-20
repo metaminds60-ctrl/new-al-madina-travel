@@ -31,7 +31,7 @@ const Contact = () => {
     {
       icon: FaPhone,
       title: 'Phone Numbers',
-      details: ['+92 316 049 4679', '+966 57 988 0123'],
+      details: ['+92 307 407 4059', '+966 57 988 0213'],
       description: 'Call us for immediate assistance',
       color: 'green'
     },
@@ -145,7 +145,7 @@ const Contact = () => {
   <>
     <SeoHead
       title="Contact New Al Madina Travels Lahore | Umrah, Visa & Flights Support"
-      description="Contact New Al Madina Travels in Lahore, Pakistan for Umrah packages, visa processing, flight booking and travel consultation. Call +92 316 049 4679 or visit our Urdu Bazar office."
+      description="Contact New Al Madina Travels in Lahore, Pakistan for Umrah packages, visa processing, flight booking and travel consultation. Call +92 307 407 4059 or visit our Urdu Bazar office."
       path="/contact"
     />
     <script type="application/ld+json">
@@ -288,7 +288,7 @@ const Contact = () => {
                       Thank you for contacting us. We'll get back to you within 24 hours.
                     </p>
                     <p className="text-yellow-500 text-sm">
-                      You can also reach us directly at +92 316 049 4679
+                      You can also reach us directly at +92 307 407 4059
                     </p>
                   </motion.div>
                 ) : (
