@@ -52,11 +52,11 @@ const Footer = () => {
   ]
 
   const socialLinks = [
-    { icon: FaFacebook, url: '#', name: 'Facebook', color: 'hover:text-blue-400' },
-    { icon: FaTwitter, url: '#', name: 'Twitter', color: 'hover:text-blue-300' },
-    { icon: FaInstagram, url: '#', name: 'Instagram', color: 'hover:text-pink-400' },
-    { icon: FaLinkedin, url: '#', name: 'LinkedIn', color: 'hover:text-blue-500' },
-    { icon: FaWhatsapp, url: '#', name: 'WhatsApp', color: 'hover:text-green-400' },
+    { icon: FaFacebook, url: 'https://www.facebook.com/newalmadinatravels/', name: 'Facebook', color: 'hover:text-blue-400' },
+    { icon: FaTwitter, url: 'https://x.com/newalmadina1', name: 'Twitter', color: 'hover:text-blue-300' },
+    { icon: FaInstagram, url: 'https://www.instagram.com/new_almadinatravels/', name: 'Instagram', color: 'hover:text-pink-400' },
+    { icon: FaLinkedin, url: 'https://www.linkedin.com/in/new-al-madina-travels/', name: 'LinkedIn', color: 'hover:text-blue-500' },
+    { icon: FaWhatsapp, url: 'https://wa.me/923074074059', name: 'WhatsApp', color: 'hover:text-green-400' },
   ]
 
   return (
